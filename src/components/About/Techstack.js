@@ -11,18 +11,28 @@ import {
 } from "react-icons/di";
 import {
   SiPytorch,
-  SiFirebase,
-  SiNextdotjs,
+  SiSolidity,
+  SiDocker,
+
 } from "react-icons/si";
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+       <Col xs={4} md={2} className="tech-icons">
+        <DiPython />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiPytorch />
+        </Col>
       <Col xs={4} md={2} className="tech-icons">
         <CgCPlusPlus />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiJavascript1 />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiSolidity />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiNodejs />
@@ -34,19 +44,10 @@ function Techstack() {
         <DiMongodb />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs />
+        <SiDocker />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiGit />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPytorch />
       </Col>
     </Row>
   );

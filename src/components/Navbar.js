@@ -14,7 +14,10 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 
+
 import { CgFileDocument } from "react-icons/cg";
+import { FaChessKnight } from "react-icons/fa";
+import { MdOutlineScience } from "react-icons/md";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -93,14 +96,36 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
+            <Nav.Link
+                as={Link}
+                to="/research"
+                onClick={() => updateExpanded(false)}
+              >
+                <MdOutlineScience style={{ marginBottom: "2px" }} /> Research
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
               <Nav.Link
                 href="https://blogs.soumya-jit.tech/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+                <ImBlog style={{ marginBottom: "2px" }} /> Crypto
               </Nav.Link>
             </Nav.Item>
+
+            <Nav.Item>
+            <Nav.Link
+                as={Link}
+                to="/chess"
+                onClick={() => updateExpanded(false)}
+              >
+                <FaChessKnight style={{ marginBottom: "2px" }} /> Chess
+              </Nav.Link>
+            </Nav.Item>
+
+            
 
             <Nav.Item className="fork-btn">
               <Button
