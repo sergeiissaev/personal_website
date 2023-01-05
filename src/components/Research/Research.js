@@ -1,8 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 import Particle from "../Particle";
-import net_worth_line_graph from "../../Assets/Projects/net_worth_line_graph.png";
-import crypto_trading from "../../Assets/Projects/crypto_trading.png";
+
 
 function Projects() {
   return (

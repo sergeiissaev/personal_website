@@ -22,7 +22,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-            I am a machine learning software engineer with a Master’s degree that specializes in building AI solutions and deploying into production. 
+            I am a machine learning software engineer with a Master’s degree that specializes in building and deploying AI solutions. 
               <br />
               <br />I am fluent in a number of programming languages, including
               <i>
