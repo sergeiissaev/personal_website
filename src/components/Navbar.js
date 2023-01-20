@@ -16,7 +16,7 @@ import {
 
 
 import { CgFileDocument } from "react-icons/cg";
-import { FaChessKnight } from "react-icons/fa";
+import { FaChessKnight, FaBitcoin } from "react-icons/fa";
 import { MdOutlineScience } from "react-icons/md";
 
 function NavBar() {
@@ -106,12 +106,12 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                href="https://blogs.soumya-jit.tech/"
-                target="_blank"
-                rel="noreferrer"
+            <Nav.Link
+                as={Link}
+                to="/crypto"
+                onClick={() => updateExpanded(false)}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Crypto
+                <FaBitcoin style={{ marginBottom: "2px" }} /> Crypto
               </Nav.Link>
             </Nav.Item>
 

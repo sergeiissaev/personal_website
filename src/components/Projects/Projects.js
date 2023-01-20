@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import net_worth_line_graph from "../../Assets/Projects/net_worth_line_graph.png";
 import crypto_trading from "../../Assets/Projects/crypto_trading.png";
+import captcha from "../../Assets/Projects/captcha.png";
 
 function Projects() {
   return (
@@ -33,6 +34,15 @@ function Projects() {
               title="Ethereum Algorithmic Trading API"
               description="Built and published an API (FastAPI) capable of scraping and preprocessing live data, then obtaining a prediction from a model (autosklearn)."
               ghLink="https://gitlab.com/sergei740/marketmerlin"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={captcha}
+              isBlog={true}
+              title="CV Based Automatic CAPTCHA Solver"
+              description="Developed end to end pipeline for solving 10 character CAPTCHA images. I used OpenCV for image processing and image segmentation, as well as transfer learning using ResNet CNN architecture to classify text."
+              ghLink="https://medium.com/towards-artificial-intelligence/deep-learning-based-automatic-captcha-solver-12cd49191c58"
             />
           </Col>
         </Row>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import { Movetext } from 'kokopu-react';
+import gif from "../../Assets/Projects/board.gif";
 
 let pgn = `
 [Event "2022 Golden Horseshoe"]
@@ -30,12 +31,15 @@ function About() {
         </h1>
 
         <Row style={{backgroundColor: "#ffffcc", color: "black"}}>
-          <Col md={2}></Col>
           <Col md={8}>
         <Movetext game={pgn} pieceSymbols="figurines" />
-        <h2>View entire game <a href="https://www.chess.com/analysis?tab=analysis">here</a></h2>
+        
+        </Col>
+        <Col md={4} style={{paddingTop: "10vh", backgroundColor: "#ccffcc",}}>
+        <img src={gif} alt="" style={{height: "40vh", width: "40vh"}} />
         </Col>
         </Row>
+        
     </Container>
     </Container>
   );
