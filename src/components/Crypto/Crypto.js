@@ -8,15 +8,23 @@ import axios from "axios";
 const btc_amount = 0.195;
 const eth_amount = 24.021;
 const xrp_amount = 9195;
+const ada_amount = 8327;
 
 class About extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { btc_price: 0, eth_price: 0, xrp_price: 0, total_value: 0 };
+    this.state = {
+      btc_price: 0,
+      eth_price: 0,
+      xrp_price: 0,
+      ada_price: 0,
+      total_value: 0,
+    };
     this.getBTC = this.getBTC.bind(this);
     this.getETH = this.getETH.bind(this);
     this.getXRP = this.getXRP.bind(this);
+    this.getADA = this.getADA.bind(this);
     this.labelGenerator = this.labelGenerator.bind(this);
   }
 
@@ -24,6 +32,7 @@ class About extends React.Component {
     this.getBTC();
     this.getETH();
     this.getXRP();
+    this.getADA();
     this.chartData = [
       {
         title: "Bitcoin",
@@ -38,7 +47,12 @@ class About extends React.Component {
       {
         title: "XRP",
         value: 0,
-        color: "#9096ED",
+        color: "#000066",
+      },
+      {
+        title: "ADA",
+        value: 0,
+        color: "#0000ff",
       },
     ];
   }
@@ -96,9 +110,27 @@ class About extends React.Component {
       });
   }
 
+  getADA() {
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/simple/price?ids=cardano&vs_currencies=cad"
+      )
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          total_value:
+            this.state.total_value + ada_amount * response.data.cardano.cad,
+          ada_price: response.data.cardano.cad,
+        });
+        this.chartData[3].value = ada_amount * this.state.ada_price;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   labelGenerator({ dataEntry }) {
-    console.log(dataEntry);
-    console.log(this.state.total_value);
+    console.log(this.state);
     return (
       dataEntry.title +
       " " +
@@ -117,22 +149,25 @@ class About extends React.Component {
           </h1>
           <br /> <br />
           <Row style={{ height: "50vh" }}>
-            {this.state.total_value > 60000 && (
-              <PieChart
-                data={this.chartData}
-                animate
-                animationDuration={500}
-                animationEasing="ease-out"
-                radius={50}
-                labelStyle={{
-                  fontSize: "3px",
-                  fontFamily: "sans-serif",
-                  fill: "#121212",
-                }}
-                label={this.labelGenerator}
-                labelPosition={70}
-              />
-            )}
+            {this.state.btc_price > 0 &&
+              this.state.eth_price > 0 &&
+              this.state.xrp_price > 0 &&
+              this.state.ada_price > 0 && (
+                <PieChart
+                  data={this.chartData}
+                  animate
+                  animationDuration={500}
+                  animationEasing="ease-out"
+                  radius={50}
+                  labelStyle={{
+                    fontSize: "3px",
+                    fontFamily: "sans-serif",
+                    fill: "white",
+                  }}
+                  label={this.labelGenerator}
+                  labelPosition={70}
+                />
+              )}
           </Row>
         </Container>
         <br /> <br /> <br /> <br />
