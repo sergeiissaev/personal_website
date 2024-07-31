@@ -5,8 +5,8 @@ import { PieChart } from "react-minimal-pie-chart";
 import getBTC from "../Services/crypto_prices";
 import axios from "axios";
 
-const btc_amount = 0.195;
-const eth_amount = 24.021;
+const btc_amount = 0.253;
+const eth_amount = 24.931;
 const xrp_amount = 9195;
 const ada_amount = 8327;
 
